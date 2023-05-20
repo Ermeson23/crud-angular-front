@@ -9,7 +9,7 @@ import { Course } from '../model/course';
 })
 export class CoursesService {
 
-  private readonly API = '/assets/courses.json';
+  private readonly API = 'api/courses';
 
   // Injeção de uma dependência : solicitando uma instância do HttpClient
   constructor(private httpClient: HttpClient) { }
