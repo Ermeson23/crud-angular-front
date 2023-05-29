@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CourseResolver } from '../../courses/guards/course.resolver';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -12,6 +13,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
+  providers: [
+    CourseResolver
+  ],
   exports: [
     MatCardModule,
     MatTableModule,
@@ -23,7 +27,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
 })
 export class AppMaterialModule { }

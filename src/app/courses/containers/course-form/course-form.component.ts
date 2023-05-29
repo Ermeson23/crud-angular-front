@@ -4,6 +4,8 @@ import { NonNullableFormBuilder } from '@angular/forms';
 import { CoursesService } from '../../services/courses.service';
 import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { Course } from '../../model/course';
 
 @Component({
   selector: 'app-course-form',
@@ -13,6 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CourseFormComponent implements OnInit {
 
   form = this.formBuilder.group({
+    _id: [''],
     name: [''],
     category: ['']
   });
@@ -20,12 +23,18 @@ export class CourseFormComponent implements OnInit {
   constructor(private formBuilder: NonNullableFormBuilder,
     private service: CoursesService,
     private snackBar: MatSnackBar,
-    private location: Location) {
-    // this.form
+    private location: Location,
+    private route: ActivatedRoute) {
    }
 
    ngOnInit(): void {
-     this.form.value.name = 'Ermeson';
+     const course: Course = this.route.snapshot.data['course'];
+     this.form.setValue({
+      _id: course._id,
+      name: course.name,
+      category: course.category
+     });
+
    }
 
    onSubmit() {
@@ -38,7 +47,7 @@ export class CourseFormComponent implements OnInit {
    }
 
    onSuccess() {
-    this.snackBar.open('Curso adicionado com sucesso!', '', { duration: 5000 });
+    this.snackBar.open('Curso salvo com sucesso!', '', { duration: 5000 });
     this.onCancel();
    }
 
