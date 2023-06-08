@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CourseResolver } from '../../courses/guards/course.resolver';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -28,6 +29,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatSelectModule,
     MatSnackBarModule,
+    FormsModule
   ],
 })
 export class AppMaterialModule { }
