@@ -7,9 +7,9 @@ export class CategoryPipe implements PipeTransform {
 
   transform(value: string): string {
     switch(value) {
-      case 'front-end' : return 'code';
-      case 'back-end' : return 'computer';
-      case 'full-stack' : return 'webhook';
+      case 'Front-end' : return 'code';
+      case 'Back-end' : return 'computer';
+      case 'Full-stack' : return 'webhook';
     }
     return 'code';
   }
