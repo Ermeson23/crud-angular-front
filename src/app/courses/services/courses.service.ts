@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { first, tap } from 'rxjs/operators';
 
 import { Course } from '../model/course';
+import { CoursePage } from '../model/course-page';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class CoursesService {
   // Injeção de uma dependência : solicitando uma instância do HttpClient
   constructor(private httpClient: HttpClient) { }
 
-  list() {
-    return this.httpClient.get<Course[]>(this.API)
+  list(numberPage = 0, pageSize = 10) {
+    return this.httpClient.get<CoursePage>(this.API, { params: {numberPage, pageSize} })
     .pipe(
       first(),
       tap(courses => console.log(courses))
