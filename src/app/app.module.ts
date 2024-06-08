@@ -9,18 +9,16 @@ import { ConfirmationDialogComponent } from './shared/components/confirmation-di
 import { AppMaterialModule } from './shared/app-material/app-material.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ConfirmationDialogComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AppMaterialModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        AppMaterialModule,
+        ConfirmationDialogComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

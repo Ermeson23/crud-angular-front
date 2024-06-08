@@ -5,17 +5,15 @@ import { AppMaterialModule } from './app-material/app-material.module';
 import { CategoryPipe } from './pipes/category.pipe';
 
 @NgModule({
-  declarations: [
-    ErrorDialogComponent,
-    CategoryPipe,
-  ],
-  imports: [
-    AppMaterialModule,
-    CommonModule
-  ],
-  exports: [
-    ErrorDialogComponent,
-    CategoryPipe
-  ]
+    imports: [
+        AppMaterialModule,
+        CommonModule,
+        ErrorDialogComponent,
+        CategoryPipe
+    ],
+    exports: [
+        ErrorDialogComponent,
+        CategoryPipe
+    ]
 })
 export class SharedModule { }
