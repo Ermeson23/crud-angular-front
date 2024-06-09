@@ -7,8 +7,9 @@ import { AppComponent } from './app/app.component';
 import { AppMaterialModule } from './app/shared/app-material/app-material.module';
 import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app/app-routing.module';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { PreloadAllModules, provideRouter, withPreloading } from '@angular/router';
+import { APP_ROUTES } from './app/app.routes';
 
 if (environment.production) {
   enableProdMode();
@@ -16,9 +17,10 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, AppRoutingModule, AppMaterialModule),
+        importProvidersFrom(BrowserModule, AppMaterialModule),
         provideAnimations(),
-        provideHttpClient(withInterceptorsFromDi())
+        provideHttpClient(withInterceptorsFromDi()),
+        provideRouter(APP_ROUTES, withPreloading(PreloadAllModules))
     ]
 })
   .catch(err => console.error(err));
