@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+    template: `
+    <mat-toolbar color="primary">
+      <h1 [routerLink]="['/']" style="cursor: pointer;">Cursos Online</h1>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  `,
     standalone: true,
-    imports: [MatToolbarModule, RouterOutlet]
+    imports: [MatToolbarModule, RouterLink, RouterOutlet]
 })
 export class AppComponent {
-  title = 'crud-angular';
+  title = 'Cursos Online';
 }
