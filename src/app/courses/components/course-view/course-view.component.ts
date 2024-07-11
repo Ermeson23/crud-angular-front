@@ -12,6 +12,7 @@ import {
   import { MatSidenavModule } from '@angular/material/sidenav';
   import { ActivatedRoute } from '@angular/router';
   import { MatListModule } from '@angular/material/list';
+  import { MatIconModule } from '@angular/material/icon';
   
   import { Course } from '../../model/course';
   import { NgFor, NgIf } from '@angular/common';
@@ -27,6 +28,7 @@ import {
     imports: [
       NgIf,
       NgFor,
+      MatIconModule,
       MatSidenavModule,
       MatButtonModule,
       MatListModule,
@@ -39,6 +41,7 @@ import {
     selectedLesson!: Lesson;
     videoHeight!: number;
     videoWidth!: number;
+    value: boolean = true;
   
     @ViewChild('youTubePlayer') youTubePlayer!: ElementRef<HTMLDivElement>;
   
@@ -74,5 +77,9 @@ import {
   
     displaySelectedLesson(lesson: Lesson) {
       return this.selectedLesson === lesson;
+    }
+
+    drawerToggle() { 
+     return this.value = !this.value;
     }
 }

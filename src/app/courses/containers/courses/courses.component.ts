@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Observable, catchError, of, tap } from 'rxjs';
 
 import { Course } from '../../model/course';
@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 import { CoursePage } from '../../model/course-page';
-import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
+import { PageEvent, MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CoursesListComponent } from '../../components/courses-list/courses-list.component';
 import { NgIf, AsyncPipe } from '@angular/common';
@@ -39,6 +39,8 @@ export class CoursesComponent {
 
   pageIndex = 0;
   pageSize = 10;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
     private coursesService: CoursesService,
@@ -100,4 +102,7 @@ export class CoursesComponent {
     });
   }
 
+  onView(course: Course) {
+    this.router.navigate(['view', course._id], { relativeTo: this.route });
+  }
 }
