@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cursos-online-beta.vercel.app/sitemap.xml

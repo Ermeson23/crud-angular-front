@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { Course } from '../../model/course';
 import { CategoryPipe } from '../../../shared/pipes/category.pipe';
@@ -11,7 +12,7 @@ import { MatTableModule } from '@angular/material/table';
     templateUrl: './courses-list.component.html',
     styleUrls: ['./courses-list.component.scss'],
     standalone: true,
-    imports: [MatTableModule, MatIconModule, MatButtonModule, CategoryPipe]
+    imports: [RouterLink, MatTableModule, MatIconModule, MatButtonModule, CategoryPipe]
 })
 export class CoursesListComponent {
 
