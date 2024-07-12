@@ -1,7 +1,7 @@
 <mat-drawer-container autosize class="example-container">
     <mat-drawer #drawer mode="side" [opened]="value" class="example-sidenav">
       <div>
-        <h3>{{ course.name }}</h3>
+        <h2>{{ course.name }}</h2>
       </div>
       <mat-nav-list dense *ngIf="course.lessons">
         <ng-template ngFor let-lesson [ngForOf]="course.lessons">

@@ -21,8 +21,8 @@
 
       <mat-toolbar>
         <span>Aulas</span>
-        <button mat-icon-button color="accent" (click)="addNewLesson()">
-          <mat-icon aria-label="Adicionar uma aula">add</mat-icon>
+        <button mat-icon-button color="accent" (click)="addNewLesson()" aria-label="Adicionar uma aula">
+          <mat-icon>add</mat-icon>
         </button>
       </mat-toolbar>
       <mat-error *ngIf="formUtils.isFormArrayRequired(form, 'lessons')" class="form-array-error">Adicione pelo menos uma aula.</mat-error>
@@ -52,8 +52,8 @@
             </mat-form-field>
           </td>
           <td>
-            <button mat-icon-button color="warn" (click)="removeLesson(i)">
-              <mat-icon aria-label="Remover a aula">delete</mat-icon>
+            <button mat-icon-button color="warn" (click)="removeLesson(i)" aria-label="Remover a aula">
+              <mat-icon>delete</mat-icon>
             </button>
           </td>
         </tr>
@@ -62,7 +62,7 @@
   </mat-card-content>
 
   <mat-card-actions class="actions-center">
-    <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
-    <button mat-raised-button (click)="onCancel()" class="btn-space">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()" aria-label="Salvar o curso">Salvar</button>
+    <button mat-raised-button (click)="onCancel()" class="btn-space" aria-label="Cancelar as alteraçoes no curso">Cancelar</button>
   </mat-card-actions>
 </mat-card>

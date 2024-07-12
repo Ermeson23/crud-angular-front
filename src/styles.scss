@@ -3,11 +3,11 @@
 @include mat.core();
 
 // Available color palettes: https://material.io/design/color/
-$crud-angular-primary: mat.m2-define-palette(mat.$m2-blue-palette);
+$crud-angular-primary: mat.m2-define-palette(mat.$m2-blue-palette, 700);
 $crud-angular-accent: mat.m2-define-palette(mat.$m2-indigo-palette, A200, A400, 700);
 
 // Optional palette (defaults to red).
-$crud-angular-warn: mat.m2-define-palette(mat.$m2-red-palette);
+$crud-angular-warn: mat.m2-define-palette(mat.$m2-red-palette, A700);
 
 // Create the theme object.
 $crud-angular-theme: mat.m2-define-light-theme(
