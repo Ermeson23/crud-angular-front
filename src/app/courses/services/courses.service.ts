@@ -18,8 +18,7 @@ export class CoursesService {
   list(numberPage = 0, pageSize = 10) {
     return this.httpClient.get<CoursePage>(this.API, { params: {numberPage, pageSize} })
     .pipe(
-      first(),
-      tap(courses => console.log(courses))
+      first()
     );
   }
 
