@@ -63,7 +63,7 @@ Página de Criação de Cursos - Mobile
 Página de Edição de Cursos - Desktop
 
 <p align="center">
-  <img src="./src/assets/img/edit-course-screenshot.png" alt="Página de Edição de Cursos" width="30%">
+  <img src="./src/assets/img/edit-course-screenshot.png" alt="Página de Edição de Cursos" width="100%">
 </p>
 
 Página de Exclusão de Cursos - Mobile
@@ -75,11 +75,11 @@ Página de Exclusão de Cursos - Mobile
 Página para a Visualização de Aulas
 
 <p align="center">
-  <img src="./src/assets/img/view-course-screenshot.png" alt="Página para a Visualização de Aulas" width="30%">
+  <img src="./src/assets/img/view-course-screenshot.png" alt="Página para a Visualização de Aulas" width="100%">
 </p>
 
 <p align="center">
-  <img src="./src/assets/img/view-course-screenshot-without-lessons.png" alt="Página para a Visualização de Aulas" width="30%">
+  <img src="./src/assets/img/view-course-screenshot-without-lessons.png" alt="Página para a Visualização de Aulas" width="100%">
 </p>
 
 ## 💻 Detalhes do Projeto e Dependências externas
